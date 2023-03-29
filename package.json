@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "serve": "webpack serve"
+    "serve": "webpack serve",
+    "lint": "npx eslint ./app/",
+    "lint:watch": "npx esw --ext .js,.ts ./app --watch"
   },
   "keywords": [],
   "author": "",
@@ -17,9 +19,19 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
     "babel-loader": "^9.1.2",
     "babel-preset-env": "^1.7.0",
+    "eslint": "^8.37.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-watch": "^8.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.2",
     "webpack-dev-server": "^4.13.1"
   }
 }
