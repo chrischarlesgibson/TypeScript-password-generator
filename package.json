@@ -4,13 +4,13 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack",
     "serve": "webpack serve",
     "lint": "npx eslint ./app/",
     "lint:watch": "npx esw --ext .js,.ts ./app --watch",
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "cypress:open": "cypress open"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +26,7 @@
     "@typescript-eslint/parser": "^5.57.0",
     "babel-loader": "^9.1.2",
     "babel-preset-env": "^1.7.0",
+    "cypress": "^12.9.0",
     "eslint": "^8.37.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.8.0",
