@@ -22,6 +22,7 @@ const specialcharactersListArray: string[] = specialcharactersList.split("");
 
 // Write password to the #password input . use null check to prevent error
 function writePassword(): void {
+  console.log("clicked");
   const password = generatePassword();
   let passwordText: HTMLInputElement | null =
     document.querySelector("#password");
@@ -50,14 +51,18 @@ function generatePassword(): string {
   }
   //    alert if user inputs length less than 8 or greater than 128. called generate password function again if user triggered this alert so that the prompt workflow restarts from beginning.
   // eslint-disable-next-line radix
-  if (parseInt(passwordLength) < 8 || parseInt(passwordLength) > 128) {
+  // if length is null then length will be 0 so we can avoid a sitaution where null is passed thru which causes an error
+  if (
+    parseInt(passwordLength || "0") < 8 ||
+    parseInt(passwordLength || "0") > 128
+  ) {
     alert("Password must be between 8 and 128 characters in length");
     return "";
   }
 
   //    turning string input of password length into number and putting it into a variable
   // eslint-disable-next-line radix
-  const inputtedPasswordLength: number = parseInt(passwordLength);
+  const inputtedPasswordLength: number = parseInt(passwordLength || "0");
 
   const lowercase = confirm(
     "Do you want to include any lowercase characters in your password?"
